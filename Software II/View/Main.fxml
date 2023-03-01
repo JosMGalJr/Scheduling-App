@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainScreenController">
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="allAppointmentsTable" layoutX="42.0" layoutY="61.0" prefHeight="235.0" prefWidth="925.0">
+                    <columns>
+                        <TableColumn fx:id="colAptID" prefWidth="34.0" text="ID" />
+                        <TableColumn fx:id="colAptTitle" prefWidth="69.0" text="Title" />
+                        <TableColumn fx:id="colAptDescription" prefWidth="122.0" text="Description" />
+                        <TableColumn fx:id="colAptLocation" prefWidth="75.0" text="Location" />
+                        <TableColumn fx:id="colAptContact" prefWidth="75.0" text="Contact" />
+                        <TableColumn fx:id="colAptType" prefWidth="75.0" text="Type" />
+                        <TableColumn fx:id="colAptStart" prefWidth="132.0" text="Start" />
+                        <TableColumn fx:id="colAptEnd" prefWidth="137.0" text="End" />
+                        <TableColumn fx:id="colAptCustomerID" prefWidth="110.0" text="Customer ID" />
+                        <TableColumn fx:id="colAptUserID" prefWidth="95.0" text="User ID" />
+                    </columns>
+                </TableView>
+                <TableView fx:id="allCustomersTable" layoutX="38.0" layoutY="429.0" prefHeight="235.0" prefWidth="925.0">
+                    <columns>
+                        <TableColumn fx:id="colCustID" prefWidth="56.0" text="ID" />
+                        <TableColumn fx:id="colCustName" prefWidth="117.0" text="Name" />
+                        <TableColumn fx:id="colCustAddress" prefWidth="179.0" text="Address" />
+                        <TableColumn fx:id="colCustPostal" prefWidth="128.0" text="Postal Code" />
+                        <TableColumn fx:id="colCustDiv" prefWidth="87.0" text="Division" />
+                        <TableColumn fx:id="colCustCountry" prefWidth="157.0" text="Country" />
+                        <TableColumn fx:id="colCustPhone" prefWidth="200.0" text="Phone #" />
+                    </columns>
+                </TableView>
+                <Button fx:id="addAptButton" layoutX="38.0" layoutY="30.0" mnemonicParsing="false" onAction="#aptGoToAdd" text="Add" />
+                <Button fx:id="updateAptButton" layoutX="474.0" layoutY="30.0" mnemonicParsing="false" onAction="#aptGoToUpdate" text="Update" />
+                <Button fx:id="deleteAptButton" layoutX="911.0" layoutY="30.0" mnemonicParsing="false" onAction="#onDeleteApt" text="Delete" />
+                <Button fx:id="addCustButton" layoutX="38.0" layoutY="400.0" mnemonicParsing="false" onAction="#custGoToAdd" text="Add" />
+                <Button fx:id="updateCustButton" layoutX="474.0" layoutY="400.0" mnemonicParsing="false" onAction="#custGoToUpdate" text="Update" />
+                <Button fx:id="deleteCustButton" layoutX="911.0" layoutY="400.0" mnemonicParsing="false" onAction="#onDeleteCust" text="Delete" />
+                <Button fx:id="reportsButton" layoutX="475.0" layoutY="761.0" mnemonicParsing="false" onAction="#goToReports" text="Reports" />
+                <Button fx:id="exitbutton" layoutX="29.0" layoutY="761.0" mnemonicParsing="false" onAction="#onExit" text="Exit" />
+            <RadioButton fx:id="allRadio" layoutX="76.0" layoutY="309.0" mnemonicParsing="false" onAction="#viewAll" text="All Appointments">
+               <toggleGroup>
+                  <ToggleGroup fx:id="aptToggle" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="weekRadio" layoutX="427.0" layoutY="309.0" mnemonicParsing="false" onAction="#viewWeek" text="Appointments This Week" toggleGroup="$aptToggle" />
+            <RadioButton fx:id="monthRadio" layoutX="802.0" layoutY="309.0" mnemonicParsing="false" onAction="#viewMonth" text="Appointments This Month" toggleGroup="$aptToggle" />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
