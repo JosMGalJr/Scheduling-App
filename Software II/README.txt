@@ -1,10 +1,4 @@
-WGU Software II - Advanced Java Concepts - C195
 GUI-Based Scheduling Application
-
-Created by:
-Jose M. Galarza Jr
-jgalar2@wgu.edu
-808-482-0551
 
 IntelliJ IDEA 2021.2.3 (Community Edition)
 Java JDK 11.0.13
